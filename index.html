@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>BİKİRİX | Kişisel Web Sitesi</title>
-  <meta name="description" content="BİKİRİX'in kişisel web sitesi.">
+
+  <meta
+    name="description"
+    content="BİKİRİX'in kişisel web sitesi ve fotoğraf galerisi."
+  >
 
   <style>
     * {
@@ -15,29 +19,30 @@
     html {
       min-height: 100%;
       background: #11121b;
+      color-scheme: dark;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
       min-height: 100svh;
-      padding: 40px 18px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 40px 16px;
 
       font-family: Arial, Helvetica, sans-serif;
+      color: #ffffff;
       text-align: center;
-      color: #fff;
       line-height: 1.7;
-      overflow-wrap: anywhere;
 
+      overflow-wrap: anywhere;
       isolation: isolate;
     }
 
-    /* ARKA PLAN FOTOĞRAFINI BURADAN DEĞİŞTİREBİLİRSİN.
-       Fotoğrafı index.html ile aynı klasöre yükle. */
+    /*
+      ARKA PLAN FOTOĞRAFI
+
+      Fotoğrafı değiştirmek için aşağıdaki url içindeki
+      dosya adını değiştir. Fotoğrafı da GitHub'a yükle.
+    */
     body::before {
       content: "";
       position: fixed;
@@ -47,22 +52,25 @@
 
       background-image:
         linear-gradient(
-          rgba(8, 10, 20, 0.35),
-          rgba(8, 10, 20, 0.65),
+          rgba(8, 10, 20, 0.40),
+          rgba(8, 10, 20, 0.65)
+        ),
         url("WhatsApp Image 2026-10-28 at 15.26.09.jpeg");
-    
 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    .kart {
+    .sayfa {
       width: 100%;
-      max-width: 650px;
-      padding: 42px 28px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-      background: rgba(12, 14, 24, 0.88);
+    .kart {
+      padding: 42px 28px;
+      background: rgba(12, 14, 24, 0.90);
       border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 26px;
       box-shadow: 0 20px 65px rgba(0, 0, 0, 0.55);
@@ -70,82 +78,81 @@
 
     .etiket {
       display: inline-block;
-      margin: 0 0 18px;
+      margin: 0 0 20px;
       padding: 6px 16px;
 
       background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.20);
       border-radius: 30px;
 
+      color: #ffda79;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: 2px;
-      color: #f0d78b;
     }
 
     h1 {
-      margin: 0 0 16px;
-      font-size: clamp(30px, 7vw, 48px);
+      margin: 0 0 20px;
+      font-size: clamp(30px, 7vw, 52px);
       font-weight: 800;
       line-height: 1.2;
-      text-shadow: 0 3px 12px #000;
+      text-shadow: 0 3px 12px #000000;
     }
 
     h1 span {
       display: block;
-      margin-top: 8px;
+      margin-top: 10px;
       color: #ffda79;
-      letter-spacing: 2px;
-    }
-
-    .giris {
-      margin: 0;
-      font-size: 19px;
-      font-weight: 600;
-    }
-
-    .rusca {
-      margin: 10px 0 0;
-      color: #e3d6ff;
-      font-size: 19px;
-      font-style: italic;
-    }
-
-    section {
-      margin-top: 28px;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      letter-spacing: 3px;
     }
 
     h2 {
-      margin: 0 0 12px;
-      font-size: 23px;
-      font-weight: 800;
+      margin: 0 0 14px;
       color: #ffda79;
+      font-size: 25px;
+      font-weight: 800;
     }
 
     p {
-      margin: 8px 0;
+      margin: 10px 0;
       font-size: 18px;
-      font-weight: 500;
+    }
+
+    .giris {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .rusca {
+      color: #e3d6ff;
+      font-size: 20px;
+      font-style: italic;
+    }
+
+    .bolum {
+      margin-top: 30px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .durum {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 9px;
+      justify-content: center;
+      gap: 10px;
     }
 
     .nokta {
       width: 10px;
       height: 10px;
       flex-shrink: 0;
+
       background: #7cf5ad;
       border-radius: 50%;
+      box-shadow: 0 0 12px rgba(124, 245, 173, 0.5);
     }
 
-    .liste {
+    .ilgi-listesi {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -156,307 +163,313 @@
       list-style: none;
     }
 
-    .liste li {
+    .ilgi-listesi li {
       padding: 8px 20px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.10);
 
       font-size: 17px;
       font-weight: 700;
     }
 
-    .github {
+    .github-linki,
+    .galeri-dugmesi {
       display: inline-block;
       max-width: 100%;
-      margin-top: 8px;
-      padding: 12px 22px;
+      margin-top: 10px;
+      padding: 13px 24px;
 
       background: #ffda79;
       color: #17151d;
       border: 2px solid transparent;
-      border-radius: 12px;
+      border-radius: 14px;
 
-      font-size: 17px;
+      font: inherit;
       font-weight: 800;
       text-decoration: none;
+      cursor: pointer;
 
       transition: background 0.2s, transform 0.2s;
     }
 
-    .github:hover {
-      background: #ffe7a6;
+    .github-linki:hover,
+    .galeri-dugmesi:hover {
+      background: #ffe8ad;
       transform: translateY(-2px);
     }
 
-    .github:focus-visible {
-      outline: 3px solid #fff;
+    .github-linki:focus-visible,
+    .galeri-dugmesi:focus-visible {
+      outline: 3px solid #ffffff;
       outline-offset: 5px;
     }
 
-    @media (max-width: 480px) {
+    .galeri[hidden] {
+      display: none;
+    }
+
+    .galeri {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .fotograf-satiri {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 20px;
+    }
+
+    .fotograf {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .bilgi-kutusu {
+      min-width: 0;
+      padding: 24px 20px;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.20);
+      border-radius: 18px;
+    }
+
+    .bilgi-kutusu h3 {
+      margin: 0 0 12px;
+      color: #ffda79;
+      font-size: 23px;
+    }
+
+    .bilgi-kutusu p {
+      margin: 0;
+      color: #ffffff;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* İkinci, dördüncü, altıncı fotoğraflar sağa geçer. */
+    .fotograf-satiri:nth-child(even) .fotograf {
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .fotograf-satiri:nth-child(even) .bilgi-kutusu {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: #eeeeee;
+      font-size: 14px;
+      text-shadow: 0 2px 5px #000000;
+    }
+
+    @media (max-width: 600px) {
       body {
-        padding: 24px 14px;
+        padding: 22px 12px;
       }
 
       .kart {
-        padding: 30px 20px;
+        padding: 30px 18px;
         border-radius: 20px;
       }
 
-      p,
+      .fotograf-satiri {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .fotograf-satiri:nth-child(even) .fotograf,
+      .fotograf-satiri:nth-child(even) .bilgi-kutusu {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
       .giris,
       .rusca {
-        font-size: 17px;
+        font-size: 18px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .github {
+      .github-linki,
+      .galeri-dugmesi {
         transition: none;
       }
-    }/* GALERİ DÜĞMESİ */
-.galeri-dugmesi {
-  margin-top: 12px;
-  padding: 14px 26px;
-  border: none;
-  border-radius: 14px;
-
-  background: #ffda79;
-  color: #17151d;
-
-  font: inherit;
-  font-weight: 800;
-  cursor: pointer;
-
-  transition: background 0.2s;
-}
-
-.galeri-dugmesi:hover {
-  background: #ffe8ad;
-}
-
-.galeri-dugmesi:focus-visible {
-  outline: 3px solid white;
-  outline-offset: 5px;
-}
-
-/* Gizli galeri düğmeye basılınca açılır */
-.fotograf-galerisi[hidden] {
-  display: none;
-}
-
-.fotograf-galerisi {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-top: 28px;
-}
-
-/* Fotoğraf ve yanındaki bilgi kutusu */
-.fotograf-satiri {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 18px;
-  align-items: center;
-}
-
-/* Her ikinci satırda fotoğraf sağa geçer */
-.fotograf-satiri:nth-child(even) .galeri-fotografi {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.fotograf-satiri:nth-child(even) .bilgi-kutusu {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.galeri-fotografi {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.bilgi-kutusu {
-  min-width: 0;
-  padding: 20px 16px;
-
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-
-  text-align: center;
-}
-
-.bilgi-kutusu h3 {
-  margin: 0 0 10px;
-  color: #ffda79;
-  font-size: 21px;
-}
-
-.bilgi-kutusu p {
-  margin: 0;
-  color: #fff;
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-/* Küçük ekranlarda fotoğraf üstte, bilgi altta */
-@media (max-width: 560px) {
-  .fotograf-satiri {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .fotograf-satiri:nth-child(even) .galeri-fotografi,
-  .fotograf-satiri:nth-child(even) .bilgi-kutusu {
-    grid-column: auto;
-    grid-row: auto;
-  }
-}
+    }
   </style>
 </head>
 
 <body>
-  <main class="kart">
-    <header>
-      <p class="etiket">KİŞİSEL WEB SİTEM</p>
+  <div class="sayfa">
+    <main class="kart">
 
-      <h1>
-        Merhaba, ben
-        <span>BİKİRİX</span>
-      </h1>
+      <!-- TANITIM -->
+      <header>
+        <p class="etiket">KİŞİSEL WEB SİTEM</p>
 
-      <p class="giris">Sosyal medyayı bıraktım.</p>
-      <p class="rusca" lang="ru">Жизнь прекрасна для меня</p>
-    </header>
+        <h1>
+          Merhaba, ben
+          <span>BİKİRİX</span>
+        </h1>
 
-    <section aria-labelledby="hakkimda">
-      <h2 id="hakkimda">Hakkımda</h2>
-      <p>Öğrenciyim.</p>
-      <p>Topa ayakla vurulan sporlardan hoşlanmam.</p>
-    </section>
+        <p class="giris">Sosyal medyayı bıraktım.</p>
 
-    <section aria-labelledby="aktif">
-      <h2 id="aktif" class="durum">
-        <span class="nokta" aria-hidden="true"></span>
-        Aktif halde
-      </h2>
-
-      <ul class="liste">
-        <li>Web sitem</li>
-        <li>Spor</li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="iletisim">
-      <h2 id="iletisim">İletişim</h2>
-
-      <a
-        class="github"
-        href="https://github.com/bikirix"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub: github.com/bikirix
-      </a>
-    </section>
-    <section aria-labelledby="galeri-basligi">
-  <h2 id="galeri-basligi">Fotoğraflarım</h2>
-
-  <p>Paylaştığım fotoğraflara ve hikâyelerine göz at.</p>
-
-  <button
-    type="button"
-    class="galeri-dugmesi"
-    id="galeri-dugmesi"
-    aria-expanded="false"
-    aria-controls="fotograf-galerisi"
-  >
-    Galeriyi aç
-  </button>
-
-  <div
-    class="fotograf-galerisi"
-    id="fotograf-galerisi"
-    hidden
-  >
-
-    <!-- 1. FOTOĞRAF: SOLDA / BİLGİ: SAĞDA -->
-    <article class="fotograf-satiri">
-      <img
-        class="galeri-fotografi"
-        src="foto1.jpeg"
-        alt="Birinci paylaşımım"
-        loading="lazy"
-      >
-
-      <div class="bilgi-kutusu">
-        <h3>İlk paylaşımım</h3>
-        <p>
-          Buraya ilk fotoğrafınla ilgili açıklamanı yaz.
+        <p class="rusca" lang="ru">
+          Жизнь прекрасна для меня
         </p>
-      </div>
-    </article>
+      </header>
 
-    <!-- 2. FOTOĞRAF: SAĞDA / BİLGİ: SOLDA -->
-    <article class="fotograf-satiri">
-      <img
-        class="galeri-fotografi"
-        src="foto2.jpeg"
-        alt="İkinci paylaşımım"
-        loading="lazy"
-      >
+      <!-- HAKKIMDA -->
+      <section class="bolum" aria-labelledby="hakkimda-basligi">
+        <h2 id="hakkimda-basligi">Hakkımda</h2>
 
-      <div class="bilgi-kutusu">
-        <h3>Bir başka kare</h3>
-        <p>
-          Buraya ikinci fotoğrafının hikâyesini yaz.
-        </p>
-      </div>
-    </article>
+        <p>Öğrenciyim.</p>
+        <p>Topa ayakla vurulan sporlardan hoşlanmam.</p>
+      </section>
 
-    <!-- 3. FOTOĞRAF: SOLDA / BİLGİ: SAĞDA -->
-    <article class="fotograf-satiri">
-      <img
-        class="galeri-fotografi"
-        src="foto3.jpeg"
-        alt="Üçüncü paylaşımım"
-        loading="lazy"
-      >
+      <!-- ŞU AN -->
+      <section class="bolum" aria-labelledby="aktif-basligi">
+        <h2 id="aktif-basligi" class="durum">
+          <span class="nokta" aria-hidden="true"></span>
+          Aktif halde
+        </h2>
 
-      <div class="bilgi-kutusu">
-        <h3>Yeni bir anı</h3>
-        <p>
-          Buraya üçüncü fotoğrafınla ilgili bilgileri yaz.
-        </p>
-      </div>
-    </article>
+        <ul class="ilgi-listesi">
+          <li>Web sitem</li>
+          <li>Spor</li>
+        </ul>
+      </section>
 
+      <!-- İLETİŞİM -->
+      <section class="bolum" aria-labelledby="iletisim-basligi">
+        <h2 id="iletisim-basligi">İletişim</h2>
+
+        <a
+          class="github-linki"
+          href="https://github.com/bikirix"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub: github.com/bikirix
+        </a>
+      </section>
+
+      <!-- GALERİ DÜĞMESİ VE FOTOĞRAFLAR -->
+      <section class="bolum" aria-labelledby="galeri-basligi">
+        <h2 id="galeri-basligi">Fotoğraflarım</h2>
+
+        <p>Fotoğraflarımı görmek için galeriyi aç.</p>
+
+        <button
+          type="button"
+          class="galeri-dugmesi"
+          id="galeri-dugmesi"
+          aria-expanded="false"
+          aria-controls="galeri"
+          hidden
+        >
+          Galeriyi aç
+        </button>
+
+        <div class="galeri" id="galeri">
+
+          <!--
+            1. FOTOĞRAF
+            src: GitHub'a yüklediğin fotoğrafın adı.
+            h3: Fotoğrafın başlığı.
+            p: Fotoğrafın açıklaması.
+          -->
+          <article class="fotograf-satiri">
+            <img
+              class="fotograf"
+              src="foto1.jpeg"
+              alt="Birinci galeri fotoğrafı"
+              loading="lazy"
+            >
+
+            <div class="bilgi-kutusu">
+              <h3>İlk paylaşımım</h3>
+              <p>
+                Buraya ilk fotoğrafımla ilgili açıklamamı yazacağım.
+              </p>
+            </div>
+          </article>
+
+          <!-- 2. FOTOĞRAF -->
+          <article class="fotograf-satiri">
+            <img
+              class="fotograf"
+              src="foto2.jpeg"
+              alt="İkinci galeri fotoğrafı"
+              loading="lazy"
+            >
+
+            <div class="bilgi-kutusu">
+              <h3>Bir başka kare</h3>
+              <p>
+                Buraya ikinci fotoğrafımın hikâyesini yazacağım.
+              </p>
+            </div>
+          </article>
+
+          <!-- 3. FOTOĞRAF -->
+          <article class="fotograf-satiri">
+            <img
+              class="fotograf"
+              src="foto3.jpeg"
+              alt="Üçüncü galeri fotoğrafı"
+              loading="lazy"
+            >
+
+            <div class="bilgi-kutusu">
+              <h3>Yeni bir anı</h3>
+              <p>
+                Buraya üçüncü fotoğrafımla ilgili bilgileri yazacağım.
+              </p>
+            </div>
+          </article>
+
+          <!-- Yeni fotoğraf satırlarını buraya ekleyebilirsin. -->
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>BİKİRİX · Kişisel web sitesi</footer>
   </div>
-</section>
-  </main>
+
   <script>
-  const galeriDugmesi = document.getElementById("galeri-dugmesi");
-  const fotografGalerisi = document.getElementById("fotograf-galerisi");
+    const galeriDugmesi = document.getElementById("galeri-dugmesi");
+    const galeri = document.getElementById("galeri");
 
-  galeriDugmesi.addEventListener("click", function () {
-    const acilacak = fotografGalerisi.hidden;
+    // JavaScript çalışıyorsa galeri başlangıçta kapalıdır.
+    galeri.hidden = true;
+    galeriDugmesi.hidden = false;
 
-    fotografGalerisi.hidden = !acilacak;
+    galeriDugmesi.addEventListener("click", function () {
+      const acilacak = galeri.hidden;
 
-    galeriDugmesi.setAttribute(
-      "aria-expanded",
-      String(acilacak)
-    );
+      galeri.hidden = !acilacak;
 
-    galeriDugmesi.textContent = acilacak
-      ? "Galeriyi kapat"
-      : "Galeriyi aç";
-  });
-</script>
+      galeriDugmesi.setAttribute(
+        "aria-expanded",
+        String(acilacak)
+      );
+
+      galeriDugmesi.textContent = acilacak
+        ? "Galeriyi kapat"
+        : "Galeriyi aç";
+    });
+  </script>
 </body>
 </html>
