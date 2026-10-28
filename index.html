@@ -295,6 +295,32 @@
         transition: none;
       }
     }
+  .ilgi-butonu {
+  display: inline-block;
+  padding: 8px 20px;
+
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: background 0.2s, transform 0.2s;
+}
+
+.ilgi-butonu:hover {
+  background: #6bd149;
+  color: #11121b;
+  transform: translateY(-2px);
+}
+
+.ilgi-butonu:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
   </style>
 </head>
 
@@ -319,37 +345,71 @@
       </section>
 
       <!-- AKTİF HALDE -->
-      <section class="bolum" aria-labelledby="aktif-basligi">
-        <h2 id="aktif-basligi" class="durum-basligi">
-          <span class="durum-noktasi" aria-hidden="true"></span>
-         hobi/iş
-        </h2>
+<section class="bolum" aria-labelledby="aktif-basligi">
+  <h2 id="aktif-basligi" class="durum-basligi">
+    <span class="durum-noktasi" aria-hidden="true"></span>
+    hobi/iş
+  </h2>
 
-        <ul class="ilgi-listesi">
-          <li>müzik</li>
-          <li>dersler</li>
-          <li>yazılım</li>
-          <li>basketbol</li>
-        </ul>
+  <ul class="ilgi-listesi">
+    <li>
+      <a
+        class="ilgi-butonu"
+        href="https://open.spotify.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        müzik
+      </a>
+    </li>
+
+    <li>
+      <a
+        class="ilgi-butonu"
+        href="https://tongucgo.com/#kamp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        dersler
+      </a>
+    </li>
+
+    <li>
+      <a
+        class="ilgi-butonu"
+        href="https://github.com/bikirix"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        yazılım
+      </a>
+    </li>
+
+    <li>
+      <a
+        class="ilgi-butonu"
+        href="https://www.tbf.org.tr"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        basketbol
+      </a>
+    </li>
+  </ul>
+</section>
 
              <!-- İLETİŞİM -->
         
       <section class="bolum" aria-labelledby="iletisim-basligi">
         <h2 id="iletisim-basligi">İletişim</h2>
-        
-           <b
-          class="posta-linki"
-          href="bekirsarisen@icloud.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          MAİL
-        </b>
+           <a
+              class="github-linki"
+                 href="mailto:bekirsarisen@icloud.com"
+                    >
+                       MAİL
+                    </a>
       </section>
-
-
-
-        <a
+                  <a
           class="github-linki"
           href="https://github.com/bikirix"
           target="_blank"
