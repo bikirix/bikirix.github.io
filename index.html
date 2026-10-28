@@ -4,12 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BİKİRİX | Kişisel Web Sitesi</title>
-
-  <meta
-    name="description"
-    content="BİKİRİX'in kişisel web sitesi ve fotoğraf galerisi."
-  >
+  <title>Bekir</title>
+  <meta name="description" content="Bekir'in paylaşımları.">
 
   <style>
     * {
@@ -29,9 +25,9 @@
       padding: 40px 16px;
 
       font-family: Arial, Helvetica, sans-serif;
-      color: #ffffff;
-      text-align: center;
       line-height: 1.7;
+      text-align: center;
+      color: #ffffff;
 
       overflow-wrap: anywhere;
       isolation: isolate;
@@ -40,8 +36,11 @@
     /*
       ARKA PLAN FOTOĞRAFI
 
-      Fotoğrafı değiştirmek için aşağıdaki url içindeki
-      dosya adını değiştir. Fotoğrafı da GitHub'a yükle.
+      Aşağıdaki url içindeki dosya adı, GitHub'daki
+      fotoğrafının adıyla birebir aynı olmalı.
+
+      Sende çalışan fotoğraf adı farklıysa
+      sadece tırnakların içini değiştir.
     */
     body::before {
       content: "";
@@ -53,9 +52,9 @@
       background-image:
         linear-gradient(
           rgba(8, 10, 20, 0.40),
-          rgba(8, 10, 20, 0.65)
+          rgba(8, 10, 20, 0.68)
         ),
-        url("images.jpeg");
+        url("WhatsApp Image 2026-10-28 at 15.26.09.jpeg");
 
       background-size: cover;
       background-position: center;
@@ -69,47 +68,33 @@
     }
 
     .kart {
-      padding: 42px 28px;
+      padding: 44px 30px;
+
       background: rgba(12, 14, 24, 0.90);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 26px;
-      box-shadow: 0 20px 65px rgba(0, 0, 0, 0.55);
-    }
-
-    .etiket {
-      display: inline-block;
-      margin: 0 0 20px;
-      padding: 6px 16px;
-
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      border-radius: 30px;
-
-      color: #ffda79;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.50);
     }
 
     h1 {
-      margin: 0 0 20px;
-      font-size: clamp(30px, 7vw, 52px);
+      margin: 0 0 22px;
+
+      font-size: clamp(32px, 6vw, 48px);
       font-weight: 800;
-      line-height: 1.2;
-      text-shadow: 0 3px 12px #000000;
+      line-height: 1.25;
+      color: #ffffff;
+
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
     }
 
     h1 span {
-      display: block;
-      margin-top: 10px;
       color: #ffda79;
-      letter-spacing: 3px;
     }
 
     h2 {
       margin: 0 0 14px;
       color: #ffda79;
-      font-size: 25px;
+      font-size: 24px;
       font-weight: 800;
     }
 
@@ -120,36 +105,37 @@
 
     .giris {
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .rusca {
       color: #e3d6ff;
-      font-size: 20px;
+      font-size: 19px;
       font-style: italic;
     }
 
     .bolum {
       margin-top: 30px;
       padding-top: 26px;
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
+
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
     }
 
-    .durum {
+    .durum-basligi {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
     }
 
-    .nokta {
+    .durum-noktasi {
       width: 10px;
       height: 10px;
       flex-shrink: 0;
 
       background: #7cf5ad;
       border-radius: 50%;
-      box-shadow: 0 0 12px rgba(124, 245, 173, 0.5);
+      box-shadow: 0 0 12px rgba(124, 245, 173, 0.45);
     }
 
     .ilgi-listesi {
@@ -165,15 +151,17 @@
 
     .ilgi-listesi li {
       padding: 8px 20px;
+
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.10);
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.10);
 
       font-size: 17px;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     .github-linki,
-    .galeri-dugmesi {
+    .gonderi-dugmesi {
       display: inline-block;
       max-width: 100%;
       margin-top: 10px;
@@ -181,8 +169,9 @@
 
       background: #ffda79;
       color: #17151d;
+
       border: 2px solid transparent;
-      border-radius: 14px;
+      border-radius: 12px;
 
       font: inherit;
       font-weight: 800;
@@ -193,58 +182,63 @@
     }
 
     .github-linki:hover,
-    .galeri-dugmesi:hover {
+    .gonderi-dugmesi:hover {
       background: #ffe8ad;
       transform: translateY(-2px);
     }
 
     .github-linki:focus-visible,
-    .galeri-dugmesi:focus-visible {
+    .gonderi-dugmesi:focus-visible {
       outline: 3px solid #ffffff;
       outline-offset: 5px;
     }
 
-    .galeri[hidden] {
-      display: none;
+    /* hidden özelliği olan alanlar görünmez. */
+    [hidden] {
+      display: none !important;
     }
 
-    .galeri {
+    .gonderiler {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 32px;
       margin-top: 30px;
     }
 
-    .fotograf-satiri {
+    .gonderi {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: center;
       gap: 20px;
     }
 
-    .fotograf {
+    .gonderi-fotografi {
       display: block;
       width: 100%;
       height: auto;
 
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.40);
     }
 
     .bilgi-kutusu {
       min-width: 0;
       padding: 24px 20px;
 
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.20);
-      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 16px;
+
+      text-align: center;
     }
 
     .bilgi-kutusu h3 {
       margin: 0 0 12px;
+
       color: #ffda79;
-      font-size: 23px;
+      font-size: 22px;
+      line-height: 1.4;
     }
 
     .bilgi-kutusu p {
@@ -254,24 +248,22 @@
       line-height: 1.8;
     }
 
-    /* İkinci, dördüncü, altıncı fotoğraflar sağa geçer. */
-    .fotograf-satiri:nth-child(even) .fotograf {
+    /*
+      Çapraz sıralama:
+      İlk gönderide fotoğraf solda,
+      ikinci gönderide fotoğraf sağda.
+    */
+    .gonderi:nth-child(even) .gonderi-fotografi {
       grid-column: 2;
       grid-row: 1;
     }
 
-    .fotograf-satiri:nth-child(even) .bilgi-kutusu {
+    .gonderi:nth-child(even) .bilgi-kutusu {
       grid-column: 1;
       grid-row: 1;
     }
 
-    footer {
-      margin-top: 24px;
-      color: #eeeeee;
-      font-size: 14px;
-      text-shadow: 0 2px 5px #000000;
-    }
-
+    /* Telefon görünümü */
     @media (max-width: 600px) {
       body {
         padding: 22px 12px;
@@ -282,26 +274,26 @@
         border-radius: 20px;
       }
 
-      .fotograf-satiri {
+      .giris,
+      .rusca {
+        font-size: 18px;
+      }
+
+      .gonderi {
         grid-template-columns: 1fr;
         gap: 12px;
       }
 
-      .fotograf-satiri:nth-child(even) .fotograf,
-      .fotograf-satiri:nth-child(even) .bilgi-kutusu {
+      .gonderi:nth-child(even) .gonderi-fotografi,
+      .gonderi:nth-child(even) .bilgi-kutusu {
         grid-column: auto;
         grid-row: auto;
-      }
-
-      .giris,
-      .rusca {
-        font-size: 18px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       .github-linki,
-      .galeri-dugmesi {
+      .gonderi-dugmesi {
         transition: none;
       }
     }
@@ -309,17 +301,12 @@
 </head>
 
 <body>
-  <div class="sayfa">
-    <main class="kart">
+  <main class="sayfa">
+    <div class="kart">
 
-      <!-- TANITIM -->
+      <!-- GİRİŞ -->
       <header>
-        <p class="etiket">KİŞİSEL WEB SİTEM</p>
-
-        <h1>
-          Merhaba, ben
-          <span>BİKİRİX</span>
-        </h1>
+        <h1>Merhaba, ben <span>Bekir</span></h1>
 
         <p class="giris">Sosyal medyayı bıraktım.</p>
 
@@ -332,21 +319,20 @@
       <section class="bolum" aria-labelledby="hakkimda-basligi">
         <h2 id="hakkimda-basligi">Hakkımda</h2>
 
-        <p>LGS hayallari</p>
-        <p>Topu potaya atarım ama şu sıralar değil</p>
-        <p>don ritche gibiyimdir</p>
+        <p>Öğrenciyim.</p>
+        <p>Topa ayakla vurulan sporlardan hoşlanmam.</p>
       </section>
 
-      <!-- ŞU AN -->
+      <!-- AKTİF HALDE -->
       <section class="bolum" aria-labelledby="aktif-basligi">
-        <h2 id="aktif-basligi" class="durum">
-          <span class="nokta" aria-hidden="true"></span>
+        <h2 id="aktif-basligi" class="durum-basligi">
+          <span class="durum-noktasi" aria-hidden="true"></span>
           Aktif halde
         </h2>
 
         <ul class="ilgi-listesi">
-          <li>müzük dinlemek</li>
-          <li>ders alışmak</li>
+          <li>Web sitem</li>
+          <li>Spor</li>
         </ul>
       </section>
 
@@ -360,116 +346,114 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          GitHub: github.com/bikirix
+          GitHub
         </a>
       </section>
 
-      <!-- GALERİ DÜĞMESİ VE FOTOĞRAFLAR -->
-      <section class="bolum" aria-labelledby="galeri-basligi">
-        <h2 id="galeri-basligi">Fotoğraflarım</h2>
-
-        <p>SARI tuşa bas</p>
+      <!-- GÖNDERİLER -->
+      <section class="bolum" aria-labelledby="gonderiler-basligi">
+        <h2 id="gonderiler-basligi">Gönderiler</h2>
 
         <button
           type="button"
-          class="gönderiler"
-          id="gönderiler"
+          class="gonderi-dugmesi"
+          id="gonderi-dugmesi"
           aria-expanded="false"
-          aria-controls="galeri"
+          aria-controls="gonderiler"
           hidden
         >
-          Galeriyi aç
+          Gönderileri aç
         </button>
 
-        <div class="galeri" id="galeri">
+        <div class="gonderiler" id="gonderiler">
 
           <!--
-            1. FOTOĞRAF
-            src: GitHub'a yüklediğin fotoğrafın adı.
-            h3: Fotoğrafın başlığı.
-            p: Fotoğrafın açıklaması.
+            1. GÖNDERİ
+
+            src içindeki adı fotoğrafının adıyla değiştir.
+            alt içine fotoğrafı kısaca tarif et.
+            h3 içine başlık, p içine açıklama yaz.
           -->
-          <article class="fotograf-satiri">
+          <article class="gonderi">
             <img
-              class="fotograf"
+              class="gonderi-fotografi"
               src="foto1.jpeg"
-              alt="Birinci galeri fotoğrafı"
+              alt="İlk gönderimin fotoğrafı"
               loading="lazy"
             >
 
             <div class="bilgi-kutusu">
               <h3>İlk paylaşımım</h3>
               <p>
-                Buraya ilk fotoğrafımla ilgili açıklamamı yazacağım.
+                Buraya fotoğrafımın açıklamasını yazacağım.
               </p>
             </div>
           </article>
 
-          <!-- 2. FOTOĞRAF -->
-          <article class="fotograf-satiri">
+          <!-- 2. GÖNDERİ -->
+          <article class="gonderi">
             <img
-              class="fotograf"
+              class="gonderi-fotografi"
               src="foto2.jpeg"
-              alt="İkinci galeri fotoğrafı"
+              alt="İkinci gönderimin fotoğrafı"
               loading="lazy"
             >
 
             <div class="bilgi-kutusu">
               <h3>Bir başka kare</h3>
               <p>
-                Buraya ikinci fotoğrafımın hikâyesini yazacağım.
+                Buraya bu fotoğrafın hikâyesini yazacağım.
               </p>
             </div>
           </article>
 
-          <!-- 3. FOTOĞRAF -->
-          <article class="fotograf-satiri">
+          <!-- 3. GÖNDERİ -->
+          <article class="gonderi">
             <img
-              class="fotograf"
+              class="gonderi-fotografi"
               src="foto3.jpeg"
-              alt="Üçüncü galeri fotoğrafı"
+              alt="Üçüncü gönderimin fotoğrafı"
               loading="lazy"
             >
 
             <div class="bilgi-kutusu">
               <h3>Yeni bir anı</h3>
               <p>
-                Buraya üçüncü fotoğrafımla ilgili bilgileri yazacağım.
+                Buraya fotoğrafla ilgili bilgileri yazacağım.
               </p>
             </div>
           </article>
 
-          <!-- Yeni fotoğraf satırlarını buraya ekleyebilirsin. -->
+          <!-- Yeni gönderilerini buraya ekleyebilirsin. -->
 
         </div>
       </section>
 
-    </main>
-
-    <footer>BİKİRİX · Kişisel web sitesi</footer>
-  </div>
+    </div>
+  </main>
 
   <script>
-    const galeriDugmesi = document.getElementById("galeri-dugmesi");
-    const galeri = document.getElementById("galeri");
+    const gonderiDugmesi = document.getElementById("gonderi-dugmesi");
+    const gonderiler = document.getElementById("gonderiler");
 
-    // JavaScript çalışıyorsa galeri başlangıçta kapalıdır.
-    galeri.hidden = true;
-    galeriDugmesi.hidden = false;
+    // JavaScript çalışırken gönderiler başlangıçta kapalıdır.
+    // JavaScript kapalıysa içerik doğrudan görünür.
+    gonderiler.hidden = true;
+    gonderiDugmesi.hidden = false;
 
-    galeriDugmesi.addEventListener("click", function () {
-      const acilacak = galeri.hidden;
+    gonderiDugmesi.addEventListener("click", function () {
+      const acilacak = gonderiler.hidden;
 
-      galeri.hidden = !acilacak;
+      gonderiler.hidden = !acilacak;
 
-      galeriDugmesi.setAttribute(
+      gonderiDugmesi.setAttribute(
         "aria-expanded",
         String(acilacak)
       );
 
-      galeriDugmesi.textContent = acilacak
-        ? "Galeriyi kapat"
-        : "Galeriyi aç";
+      gonderiDugmesi.textContent = acilacak
+        ? "Gönderileri kapat"
+        : "Gönderileri aç";
     });
   </script>
 </body>
