@@ -214,7 +214,109 @@
       .github {
         transition: none;
       }
-    }
+    }/* GALERİ DÜĞMESİ */
+.galeri-dugmesi {
+  margin-top: 12px;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 14px;
+
+  background: #ffda79;
+  color: #17151d;
+
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+.galeri-dugmesi:hover {
+  background: #ffe8ad;
+}
+
+.galeri-dugmesi:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+/* Gizli galeri düğmeye basılınca açılır */
+.fotograf-galerisi[hidden] {
+  display: none;
+}
+
+.fotograf-galerisi {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 28px;
+}
+
+/* Fotoğraf ve yanındaki bilgi kutusu */
+.fotograf-satiri {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+/* Her ikinci satırda fotoğraf sağa geçer */
+.fotograf-satiri:nth-child(even) .galeri-fotografi {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.fotograf-satiri:nth-child(even) .bilgi-kutusu {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.galeri-fotografi {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.bilgi-kutusu {
+  min-width: 0;
+  padding: 20px 16px;
+
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  text-align: center;
+}
+
+.bilgi-kutusu h3 {
+  margin: 0 0 10px;
+  color: #ffda79;
+  font-size: 21px;
+}
+
+.bilgi-kutusu p {
+  margin: 0;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Küçük ekranlarda fotoğraf üstte, bilgi altta */
+@media (max-width: 560px) {
+  .fotograf-satiri {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .fotograf-satiri:nth-child(even) .galeri-fotografi,
+  .fotograf-satiri:nth-child(even) .bilgi-kutusu {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
   </style>
 </head>
 
@@ -262,6 +364,99 @@
         GitHub: github.com/bikirix
       </a>
     </section>
+    <section aria-labelledby="galeri-basligi">
+  <h2 id="galeri-basligi">Fotoğraflarım</h2>
+
+  <p>Paylaştığım fotoğraflara ve hikâyelerine göz at.</p>
+
+  <button
+    type="button"
+    class="galeri-dugmesi"
+    id="galeri-dugmesi"
+    aria-expanded="false"
+    aria-controls="fotograf-galerisi"
+  >
+    Galeriyi aç
+  </button>
+
+  <div
+    class="fotograf-galerisi"
+    id="fotograf-galerisi"
+    hidden
+  >
+
+    <!-- 1. FOTOĞRAF: SOLDA / BİLGİ: SAĞDA -->
+    <article class="fotograf-satiri">
+      <img
+        class="galeri-fotografi"
+        src="foto1.jpeg"
+        alt="Birinci paylaşımım"
+        loading="lazy"
+      >
+
+      <div class="bilgi-kutusu">
+        <h3>İlk paylaşımım</h3>
+        <p>
+          Buraya ilk fotoğrafınla ilgili açıklamanı yaz.
+        </p>
+      </div>
+    </article>
+
+    <!-- 2. FOTOĞRAF: SAĞDA / BİLGİ: SOLDA -->
+    <article class="fotograf-satiri">
+      <img
+        class="galeri-fotografi"
+        src="foto2.jpeg"
+        alt="İkinci paylaşımım"
+        loading="lazy"
+      >
+
+      <div class="bilgi-kutusu">
+        <h3>Bir başka kare</h3>
+        <p>
+          Buraya ikinci fotoğrafının hikâyesini yaz.
+        </p>
+      </div>
+    </article>
+
+    <!-- 3. FOTOĞRAF: SOLDA / BİLGİ: SAĞDA -->
+    <article class="fotograf-satiri">
+      <img
+        class="galeri-fotografi"
+        src="foto3.jpeg"
+        alt="Üçüncü paylaşımım"
+        loading="lazy"
+      >
+
+      <div class="bilgi-kutusu">
+        <h3>Yeni bir anı</h3>
+        <p>
+          Buraya üçüncü fotoğrafınla ilgili bilgileri yaz.
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
   </main>
+  <script>
+  const galeriDugmesi = document.getElementById("galeri-dugmesi");
+  const fotografGalerisi = document.getElementById("fotograf-galerisi");
+
+  galeriDugmesi.addEventListener("click", function () {
+    const acilacak = fotografGalerisi.hidden;
+
+    fotografGalerisi.hidden = !acilacak;
+
+    galeriDugmesi.setAttribute(
+      "aria-expanded",
+      String(acilacak)
+    );
+
+    galeriDugmesi.textContent = acilacak
+      ? "Galeriyi kapat"
+      : "Galeriyi aç";
+  });
+</script>
 </body>
 </html>
