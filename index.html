@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BİKİRİX | Kişisel Web Sitesi</title>
+  <meta name="description" content="BİKİRİX'in kişisel web sitesi.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: #11121b;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: 40px 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      color: #fff;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+
+      isolation: isolate;
+    }
+
+    /* ARKA PLAN FOTOĞRAFINI BURADAN DEĞİŞTİREBİLİRSİN.
+       Fotoğrafı index.html ile aynı klasöre yükle. */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+
+      background-image:
+        linear-gradient(
+          rgba(8, 10, 20, 0.35),
+          rgba(8, 10, 20, 0.65)
+        ),
+        url("IMG_4757.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .kart {
+      width: 100%;
+      max-width: 650px;
+      padding: 42px 28px;
+
+      background: rgba(12, 14, 24, 0.88);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 26px;
+      box-shadow: 0 20px 65px rgba(0, 0, 0, 0.55);
+    }
+
+    .etiket {
+      display: inline-block;
+      margin: 0 0 18px;
+      padding: 6px 16px;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 30px;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #f0d78b;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(30px, 7vw, 48px);
+      font-weight: 800;
+      line-height: 1.2;
+      text-shadow: 0 3px 12px #000;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 8px;
+      color: #ffda79;
+      letter-spacing: 2px;
+    }
+
+    .giris {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .rusca {
+      margin: 10px 0 0;
+      color: #e3d6ff;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    section {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 23px;
+      font-weight: 800;
+      color: #ffda79;
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .durum {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .nokta {
+      width: 10px;
+      height: 10px;
+      flex-shrink: 0;
+      background: #7cf5ad;
+      border-radius: 50%;
+    }
+
+    .liste {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .liste li {
+      padding: 8px 20px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
+
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .github {
+      display: inline-block;
+      max-width: 100%;
+      margin-top: 8px;
+      padding: 12px 22px;
+
+      background: #ffda79;
+      color: #17151d;
+      border: 2px solid transparent;
+      border-radius: 12px;
+
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .github:hover {
+      background: #ffe7a6;
+      transform: translateY(-2px);
+    }
+
+    .github:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 5px;
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 24px 14px;
+      }
+
+      .kart {
+        padding: 30px 20px;
+        border-radius: 20px;
+      }
+
+      p,
+      .giris,
+      .rusca {
+        font-size: 17px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .github {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="kart">
+    <header>
+      <p class="etiket">KİŞİSEL WEB SİTEM</p>
+
+      <h1>
+        Merhaba, ben
+        <span>BİKİRİX</span>
+      </h1>
+
+      <p class="giris">Sosyal medyayı bıraktım.</p>
+      <p class="rusca" lang="ru">Жизнь прекрасна для меня</p>
+    </header>
+
+    <section aria-labelledby="hakkimda">
+      <h2 id="hakkimda">Hakkımda</h2>
+      <p>Öğrenciyim.</p>
+      <p>Topa ayakla vurulan sporlardan hoşlanmam.</p>
+    </section>
+
+    <section aria-labelledby="aktif">
+      <h2 id="aktif" class="durum">
+        <span class="nokta" aria-hidden="true"></span>
+        Aktif halde
+      </h2>
+
+      <ul class="liste">
+        <li>Web sitem</li>
+        <li>Spor</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="iletisim">
+      <h2 id="iletisim">İletişim</h2>
+
+      <a
+        class="github"
+        href="https://github.com/bikirix"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        GitHub: github.com/bikirix
+      </a>
+    </section>
+  </main>
+</body>
+</html>
